@@ -1,7 +1,7 @@
 - defaultTab: nodes
   description: '24'
   executionEnabled: true
-  group: Remediation
+  group: Remediation/subgroup
   id: 125ecd87-0fae-4f81-b602-b96d3eaf00d7
   loglevel: INFO
   name: whoami1
