@@ -1,0 +1,53 @@
+- defaultTab: nodes
+  description: ''
+  executionEnabled: true
+  id: 57664685-faa1-4c71-b076-1d5a7c9c9013
+  loglevel: INFO
+  name: http_request
+  nodeFilterEditable: false
+  notification:
+    onfailure:
+      plugin:
+        configuration:
+          authentication: None
+          body: '{"fields":{"project":{"key":"OP"},"summary":"New issue created using
+            curl","description":{"type":"doc","version":1,"content":[{"type":"paragraph","content":[{"type":"text","text":"This
+            is a test issue created using curl"}]}]},"issuetype":{"id":"10009"}}}'
+          contentType: application/json
+          headers: |-
+            Content-Type: application/json
+            Authorization: Basic cmJvcmNoZXJ0QHBhZ2VyZHV0eS5jb206QVRBVFQzeEZmR0YwZXo3LVlDSHRCQS04YVZEb21JNjcwRERBczVEcTRiWW1jRzVJRXF5YmxaWE4tTVBOUS1uVkw1SHZvWDZSaE9sUFl2YldKc2R4Y0lmeE5mUUFzMjVMa1FSeUZtZ2l6WTNDbHBtN1VMeGx0c0FFYlJ3QXZVaFE4NVc4QV9acFZ0WmxmN3hJa0wxdGNHZnVfa09Ub2lkOWw2M2JLNnczMEtDN2h5YTJzLWd6dU1vPThCNkY4NTUz
+          method: POST
+          remoteUrl: https://rborchert.atlassian.net/rest/api/3/issue/
+          timeout: '30000'
+        type: HttpNotification
+  notifyAvgDurationThreshold: null
+  plugins:
+    ExecutionLifecycle: {}
+  scheduleEnabled: true
+  schedules: []
+  sequence:
+    commands:
+    - exec: test
+    - configuration:
+        authentication: None
+        body: '{"fields":{"project":{"key":"OP"},"summary":"New issue created using
+          curl","description":{"type":"doc","version":1,"content":[{"type":"paragraph","content":[{"type":"text","text":"This
+          is a test issue created using curl"}]}]},"issuetype":{"id":"10009"}}}'
+        checkResponseCode: 'false'
+        headers: |-
+          Content-Type: application/json
+          Authorization: Basic cmJvcmNoZXJ0QHBhZ2VyZHV0eS5jb206QVRBVFQzeEZmR0YwZXo3LVlDSHRCQS04YVZEb21JNjcwRERBczVEcTRiWW1jRzVJRXF5YmxaWE4tTVBOUS1uVkw1SHZvWDZSaE9sUFl2YldKc2R4Y0lmeE5mUUFzMjVMa1FSeUZtZ2l6WTNDbHBtN1VMeGx0c0FFYlJ3QXZVaFE4NVc4QV9acFZ0WmxmN3hJa0wxdGNHZnVfa09Ub2lkOWw2M2JLNnczMEtDN2h5YTJzLWd6dU1vPThCNkY4NTUz
+        method: POST
+        printResponse: 'true'
+        printResponseCode: 'false'
+        printResponseToFile: 'false'
+        proxySettings: 'false'
+        remoteUrl: https://rborchert.atlassian.net/rest/api/3/issue/
+        sslVerify: 'true'
+        timeout: '30000'
+      nodeStep: false
+      type: edu.ohio.ais.rundeck.HttpWorkflowStepPlugin
+    keepgoing: false
+    strategy: node-first
+  uuid: 57664685-faa1-4c71-b076-1d5a7c9c9013
